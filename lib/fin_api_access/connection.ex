@@ -12,7 +12,7 @@ defmodule FinAPIAccess.Connection do
   # Add any middleware here (authentication)
   plug Tesla.Middleware.BaseUrl, "https://sandbox.finapi.io"
   plug Tesla.Middleware.Headers, %{"User-Agent" => "Elixir"}
-  plug Tesla.Middleware.EncodeJson
+  plug Tesla.Middleware.FormUrlencoded
 
   @scopes [
     "all" # modify any sources
