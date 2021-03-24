@@ -101,6 +101,6 @@ defmodule FinAPIAccess.Connection do
   """
   @spec new() :: Tesla.Env.client
   def new do
-    Tesla.client([])
+    Tesla.client([Tesla.Middleware.FormUrlencoded])
   end
 end
