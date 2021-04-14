@@ -71,6 +71,7 @@ defmodule FinAPIAccess.Connection do
   @spec new(String.t) :: Tesla.Env.client
   def new(token) when is_binary(token) do
     Tesla.client([
+      {Tesla.Middleware.FormUrlencoded},
       {Tesla.Middleware.Headers,  [{"authorization", "Bearer #{token}"}]}
     ])
   end
